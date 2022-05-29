@@ -1,0 +1,37 @@
+version: "3"
+
+services:
+  client:
+    build: ./client
+    stdin_open: true
+    ports:
+      - "3000:3000"
+    networks:
+      - password-brain
+
+  api:
+    build: ./server
+    ports:
+      - "3001:3001"
+    depends_on:
+      - db
+    networks:
+      - password-brain
+
+  db:
+    image: postgres:14.3
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=password-brain
+    volumes:
+      - data:/var/lib/postgresql/data
+    networks:
+      - password-brain
+
+networks:
+  password-brain:
+    driver: bridge
+
+volumes:
+  data:
