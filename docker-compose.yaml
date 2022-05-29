@@ -22,7 +22,7 @@ services:
     image: postgres:14.3
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=secret
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
       - POSTGRES_DB=password-brain
     volumes:
       - data:/var/lib/postgresql/data
