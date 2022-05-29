@@ -31,7 +31,7 @@ POSTGRESS_PASSWORD=<your_password>
 Run in the console:
 
 ```bash
-docker compose up
+docker-compose up
 ```
 
 Pray it works
