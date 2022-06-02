@@ -1,10 +1,12 @@
-FROM node:lts-alpine3.14
+FROM node:16.15
 
 WORKDIR /app
 
 COPY package*.json .
 
 RUN npm install
+
+RUN npx prisma generate
 
 COPY . .
 

@@ -17,15 +17,21 @@ services:
       - db
     networks:
       - password-brain
+    volumes:
+      - ./server:/app
+      - /client/node_modules
+    # - ./server/nodemon.json:/app/nodemon.json
 
   db:
     image: postgres:14.3
     environment:
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=$${POSTGRES_PASSWORD}
       - POSTGRES_DB=password-brain
     volumes:
       - data:/var/lib/postgresql/data
+    ports:
+      - "8080:5432"
     networks:
       - password-brain
 
