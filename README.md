@@ -40,4 +40,10 @@ Run in the console:
 docker-compose up
 ```
 
-Pray it works
+Update database with latest migrations. Go into api docker container and run:
+
+```bash
+npx prisma migrate dev
+```
+
+Pray everything works!
