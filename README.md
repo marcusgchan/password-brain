@@ -28,6 +28,12 @@ Clone the repo and add a .env file in the root directory with the following envi
 POSTGRESS_PASSWORD=<your_password>
 ```
 
+Add another .env file in the prisma directory with the following environment variable:
+
+```.env
+DATABASE_URL=<your_database_url>
+```
+
 Run in the console:
 
 ```bash
