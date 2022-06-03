@@ -5,7 +5,6 @@ A fun little password manager side project to learn docker, docker-compose, pris
 ## Technologies Used
 
 - Frontend
-  - Vite
   - React (Typescript)
   - Material UI
   - React Query
@@ -16,6 +15,7 @@ A fun little password manager side project to learn docker, docker-compose, pris
 - Database
   - Postgress
 - Other
+  - Vite
   - Docker
 
 ## How to run
