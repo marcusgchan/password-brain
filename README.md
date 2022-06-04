@@ -1,6 +1,6 @@
-# Password Brain
+# Template
 
-A fun little password manager side project to learn docker, docker-compose, prisma, typescript, etc
+A fun little template
 
 ## Technologies Used
 
