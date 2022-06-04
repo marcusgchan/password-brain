@@ -20,7 +20,8 @@ services:
     networks:
       - password-brain
     volumes:
-      - ./server:/app
+      - ./server:/app/server
+      - node_modules:/app/server/node_modules/
 
   db:
     image: postgres:14.3
@@ -40,4 +41,5 @@ networks:
     driver: bridge
 
 volumes:
+  node_modules:
   data:

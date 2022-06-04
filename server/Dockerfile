@@ -1,4 +1,4 @@
-FROM node:16.15
+FROM node:lts
 
 WORKDIR /app
 
@@ -8,10 +8,14 @@ RUN npm install
 
 COPY . .
 
+RUN chmod +x wait-for-it.sh
+
 RUN npx prisma generate
 
 ENV PORT=3001
 
 EXPOSE $PORT
 
-CMD ["npm", "run", "dev"]
+ENTRYPOINT ["/bin/sh", "-c"]
+
+CMD ["./wait-for-it.sh db:5432 -s -t 60 -- npx prisma migrate dev && npm run dev" ]
